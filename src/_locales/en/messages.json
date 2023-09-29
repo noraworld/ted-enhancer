@@ -21,5 +21,21 @@
 
   "deepl_api_url": {
     "message": "DeepL API URL"
+  },
+
+  "toggle_subtitles_shortcut": {
+    "message": "Toggle subtitles shortcut key"
+  },
+
+  "toggle_translations_shortcut": {
+    "message": "Toggle translations shortcut key"
+  },
+
+  "toggle_pause_shortcut": {
+    "message": "Toggle pause shortcut key"
+  },
+
+  "repeat_shortcut": {
+    "message": "Repeat shortcut key"
   }
 }

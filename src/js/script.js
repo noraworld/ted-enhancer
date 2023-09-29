@@ -7,14 +7,26 @@
   var pauseSentenceBySentenceEnabled = 1
   let deeplApiKey
   let deeplApiUrl
+  let toggleSubtitlesShortcut
+  let toggleTranslationsShortcut
+  let togglePauseShortcut
+  let repeatShortcut
 
   function getOptions() {
     chrome.storage.sync.get({
       deeplApiKey: '',
       deeplApiUrl: 'https://api-free.deepl.com/v2/translate',
+      toggleSubtitlesShortcut: 'c',
+      toggleTranslationsShortcut: 't',
+      togglePauseShortcut: 'p',
+      repeatShortcut: 'r',
     }, (storage) => {
-      deeplApiKey = storage.deeplApiKey
-      deeplApiUrl = storage.deeplApiUrl
+      deeplApiKey                = storage.deeplApiKey
+      deeplApiUrl                = storage.deeplApiUrl
+      toggleSubtitlesShortcut    = storage.toggleSubtitlesShortcut
+      toggleTranslationsShortcut = storage.toggleTranslationsShortcut
+      togglePauseShortcut        = storage.togglePauseShortcut
+      repeatShortcut             = storage.repeatShortcut
     })
   }
 
@@ -22,19 +34,21 @@
     key: function () {
       window.addEventListener('keydown', (event) => {
         switch (event.key) {
-          case 'r':
+          case repeatShortcut:
             document.querySelector('video').currentTime = currentTime
-            document.querySelector('video').play()
+            if (document.querySelector('video').paused) {
+              document.querySelector('video').play()
+            }
             break
-          case 'c':
+          case toggleSubtitlesShortcut:
             subtitleEnabled = subtitleEnabled ? 0 : 1
             document.querySelector('.css-1bg08yq').style.opacity = subtitleEnabled
             break
-          case '[':
+          case toggleTranslationsShortcut:
             translationEnabled = translationEnabled ? 0 : 1
             translationEnabled ? translate(currentSubtitle()) : removeTranslationText()
             break
-          case ':':
+          case togglePauseShortcut:
             pauseSentenceBySentenceEnabled = pauseSentenceBySentenceEnabled ? 0 : 1
             if (!pauseSentenceBySentenceEnabled && document.querySelector('video').paused) {
               document.querySelector('video').play()
