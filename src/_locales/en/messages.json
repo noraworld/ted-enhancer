@@ -1,0 +1,25 @@
+{
+  "extension_name": {
+    "message": "TED Enhancer"
+  },
+
+  "extension_short_name": {
+    "message": "TED Enhancer"
+  },
+
+  "extension_description": {
+    "message": "Modifying TED for English learning"
+  },
+
+  "save_button": {
+    "message": "Save"
+  },
+
+  "deepl_api_key": {
+    "message": "DeepL API Key"
+  },
+
+  "deepl_api_url": {
+    "message": "DeepL API URL"
+  }
+}

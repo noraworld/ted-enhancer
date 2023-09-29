@@ -1,0 +1,35 @@
+{
+  "name": "__MSG_extension_name__",
+  "short_name": "__MSG_extension_short_name__",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "__MSG_extension_description__",
+  "homepage_url": "https://github.com/noraworld/ted-enhancer",
+  "default_locale": "en",
+
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+
+  "action": {
+    "default_title": "__MSG_extension_name__",
+    "default_popup": "html/options.html"
+  },
+
+  "options_ui": {
+    "page": "html/options.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.ted.com/*"
+      ],
+      "js": [
+        "js/script.js"
+      ],
+      "all_frames": true
+    }
+  ]
+}
