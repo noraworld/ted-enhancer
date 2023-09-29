@@ -34,12 +34,6 @@
     key: function () {
       window.addEventListener('keydown', (event) => {
         switch (event.key) {
-          case repeatShortcut:
-            document.querySelector('video').currentTime = currentTime
-            if (document.querySelector('video').paused) {
-              document.querySelector('video').play()
-            }
-            break
           case toggleSubtitlesShortcut:
             subtitleEnabled = subtitleEnabled ? 0 : 1
             document.querySelector('.css-1bg08yq').style.opacity = subtitleEnabled
@@ -51,6 +45,12 @@
           case togglePauseShortcut:
             pauseSentenceBySentenceEnabled = pauseSentenceBySentenceEnabled ? 0 : 1
             if (!pauseSentenceBySentenceEnabled && document.querySelector('video').paused) {
+              document.querySelector('video').play()
+            }
+            break
+          case repeatShortcut:
+            document.querySelector('video').currentTime = currentTime
+            if (document.querySelector('video').paused) {
               document.querySelector('video').play()
             }
             break
