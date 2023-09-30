@@ -2,8 +2,8 @@
   'use strict'
 
   var currentTime = 0
-  var subtitleEnabled = 1
-  var translationEnabled = 1
+  var subtitleBlur = BLUR_DEGREE
+  var translationBlur = BLUR_DEGREE
   var pauseSentenceBySentenceEnabled = 1
   var latestSubtitle = null
   let deeplApiKey
@@ -36,12 +36,15 @@
       window.addEventListener('keydown', (event) => {
         switch (event.key) {
           case toggleSubtitlesShortcut:
-            subtitleEnabled = subtitleEnabled ? 0 : 1
-            document.querySelector('.css-1bg08yq').style.opacity = subtitleEnabled
+            event.preventDefault()
+            subtitleBlur = subtitleBlur ? 0 : BLUR_DEGREE
+            document.querySelector(`.${SUBTITLE_CLASS}`).style.filter = `blur(${subtitleBlur}rem)`
             break
           case toggleTranslationsShortcut:
-            translationEnabled = translationEnabled ? 0 : 1
-            translationEnabled ? translate(currentSubtitle()) : removeTranslationText()
+            event.preventDefault()
+            translationBlur = translationBlur ? 0 : BLUR_DEGREE
+            document.querySelector(`.${TRANSLATION_CLASS}`).style.filter = `blur(${translationBlur}rem)`
+            if (!translationBlur) translate(currentSubtitle())
             break
           case togglePauseShortcut:
             pauseSentenceBySentenceEnabled = pauseSentenceBySentenceEnabled ? 0 : 1
@@ -81,9 +84,10 @@
       return
     }
 
-    removeTranslationText()
-
-    if (!translationEnabled) return
+    if (translationBlur) {
+      showTranscript(text, '')
+      return
+    }
 
     var content = 'auth_key=' + deeplApiKey + '&text=' + text + '&source_lang=EN&target_lang=JA'
 
@@ -95,21 +99,31 @@
           return response.json()
         } else {
           console.error('Could not reach the API: ' + response.statusText)
+          showTranscript(text, response.statusText)
         }
       }).then(function(data) {
         latestSubtitle = text
+        showTranscript(text, data["translations"][0]["text"])
         console.log(data["translations"][0]["text"])
-        document.querySelector('.css-1bg08yq').insertAdjacentHTML(
-          'afterend',
-          `<span class="${TRANSLATION_CLASS} pointer-events-none absolute bottom-12 w-full lg:bottom-18 transition-transform translate-y-12 delay-4000">${data["translations"][0]["text"]}</span>`
-        )
       }).catch(function(error) {
         console.error(error.message)
-        document.querySelector('.css-1bg08yq').insertAdjacentHTML(
-          'afterend',
-          `<span class="${TRANSLATION_CLASS} pointer-events-none absolute bottom-12 w-full lg:bottom-18 transition-transform translate-y-12 delay-4000">${error.message}</span>`
-        )
+        showTranscript(text, error.message)
       })
+  }
+
+  function showTranscript(subtitle = 'Count not retrieve the subtitle', translation = 'Count not retrieve the translation') {
+    removeTranslationText()
+    document.querySelector('.css-1bg08yq').insertAdjacentHTML(
+      'afterend',
+      `
+        <div class="${SUBTITLE_AND_TRANSLATION_CONTAINER_CLASS}">
+          <div class="${SUBTITLE_AND_TRANSLATION_CLASS}">
+            <span class="${SUBTITLE_CLASS}"    style="filter: blur(${subtitleBlur}rem);   ">${subtitle}</span>
+            <span class="${TRANSLATION_CLASS}" style="filter: blur(${translationBlur}rem);">${translation}</span>
+          </div>
+        </div>
+      `
+    )
   }
 
   function currentSubtitle() {
@@ -117,7 +131,7 @@
   }
 
   function removeTranslationText() {
-    const obsoleteTranslatedTexts = document.querySelectorAll(`.${TRANSLATION_CLASS}`)
+    const obsoleteTranslatedTexts = document.querySelectorAll(`.${SUBTITLE_AND_TRANSLATION_CONTAINER_CLASS},.${SUBTITLE_AND_TRANSLATION_CLASS},.${SUBTITLE_CLASS},.${TRANSLATION_CLASS}`)
     for (const obsoleteTranslatedText of obsoleteTranslatedTexts) {
       obsoleteTranslatedText.remove()
     }
@@ -160,7 +174,7 @@
 
         if (elementAdded) {
           // console.log('The element was added to the DOM');
-          document.querySelector('.' + classToLookFor).style.opacity = subtitleEnabled
+          document.querySelector('.' + classToLookFor).style.opacity = 0
           const elem = document.querySelector('.' + classToLookFor);
           observer2.observe(elem, config);
           translate(currentSubtitle())

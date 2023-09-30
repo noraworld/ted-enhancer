@@ -1,0 +1,34 @@
+.blur {
+  filter: blur(0.5rem);
+}
+
+.subtitle-and-translation-container-by-ted-enhancer {
+  width: 100%;
+  position: absolute;
+  bottom: 3.5rem;
+  text-align: center;
+}
+
+.subtitle-and-translation-by-ted-enhancer {
+  width: 370px;
+  max-width: 560px;
+  display: inline-block;
+  background-color: rgba(18, 18, 18, 0.72);
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.subtitle-by-ted-enhancer, .translation-by-ted-enhancer {
+  display: inline-block;
+  width: 100%;
+  line-height: 1.2rem;
+  font-size: 14px;
+}
+
+.subtitle-by-ted-enhancer {
+  margin: 0 0 0.6rem 0;
+}
+
+.translation-by-ted-enhancer {
+  font-size: 12px;
+}

@@ -26,6 +26,9 @@
       "matches": [
         "https://*.ted.com/*"
       ],
+      "css": [
+        "css/script.css"
+      ],
       "js": [
         "js/constant.js",
         "js/script.js"
