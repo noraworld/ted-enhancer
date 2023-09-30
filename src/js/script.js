@@ -159,6 +159,7 @@
     }
   }
 
+  // https://bobbyhadz.com/blog/detect-when-element-is-added-or-removed-from-dom-using-javascript
   const startObserving = (domNode, classToLookFor) => {
     const observer = new MutationObserver(mutations => {
       mutations.forEach(function (mutation) {
@@ -207,6 +208,7 @@
     return observer;
   };
 
+  // https://pisuke-code.com/mutation-observer-usage/
   var observer2 = new MutationObserver(function() {
     pause()
     translate(currentSubtitle())
