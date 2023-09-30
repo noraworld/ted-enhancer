@@ -3,3 +3,21 @@ body {
   max-width: 800px;
   min-width: 500px;
 }
+
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: inline-block;
+  width: 100%;
+}
+
+.save-container {
+  display: flex;
+  float: right;
+  height: 100%;
+}
