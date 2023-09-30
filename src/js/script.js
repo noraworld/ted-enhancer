@@ -47,17 +47,17 @@
             if (!translationBlur) translate(currentSubtitle())
             break
           case togglePauseShortcut:
+            event.preventDefault()
             pauseSentenceBySentenceEnabled = pauseSentenceBySentenceEnabled ? 0 : 1
             if (!pauseSentenceBySentenceEnabled && document.querySelector('video').paused) {
               document.querySelector('video').play()
             }
             break
           case repeatShortcut:
+            event.preventDefault()
             repeat()
             break
         }
-
-        event.stopPropagation()
       }, true)
     }
   }
