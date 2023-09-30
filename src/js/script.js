@@ -5,6 +5,7 @@
   var subtitleEnabled = 1
   var translationEnabled = 1
   var pauseSentenceBySentenceEnabled = 1
+  var latestSubtitle = null
   let deeplApiKey
   let deeplApiUrl
   let toggleSubtitlesShortcut
@@ -75,6 +76,11 @@
 
   // https://qiita.com/yaju/items/bf4613393cd4ee402d17#javascript
   function translate(text) {
+    if (latestSubtitle === text) {
+      console.info('DEBUG: skipped translation because the text is the same as the last one.')
+      return
+    }
+
     removeTranslationText()
 
     if (!translationEnabled) return
@@ -91,6 +97,7 @@
           console.error('Could not reach the API: ' + response.statusText)
         }
       }).then(function(data) {
+        latestSubtitle = text
         console.log(data["translations"][0]["text"])
         document.querySelector('.css-1bg08yq').insertAdjacentHTML(
           'afterend',
@@ -112,7 +119,7 @@
   function removeTranslationText() {
     const obsoleteTranslatedTexts = document.querySelectorAll(`.${TRANSLATION_CLASS}`)
     for (const obsoleteTranslatedText of obsoleteTranslatedTexts) {
-      obsoleteTranslatedText.remove();
+      obsoleteTranslatedText.remove()
     }
   }
 
