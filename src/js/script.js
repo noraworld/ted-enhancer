@@ -71,9 +71,11 @@
 
   function repeat() {
     document.querySelector('video').currentTime = currentTime
-    if (document.querySelector('video').paused) {
-      document.querySelector('video').play()
-    }
+
+    // avoid conflict with Video Commander
+    setTimeout(function() {
+      if (document.querySelector('video').paused) document.querySelector('video').play()
+    }, 100)
   }
 
   function togglePlayAndPause() {
