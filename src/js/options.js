@@ -36,43 +36,19 @@ function save() {
     repeatShortcut:             repeatShortcut,
     togglePlayAndPauseShortcut: togglePlayAndPauseShortcut,
   }, () => {
+    document.querySelector('#save').setAttribute('disabled', '')
   })
 }
 
 function eventListener() {
-  document.querySelector('#deepl-api-key').addEventListener('submit', function(event) {
-    event.preventDefault()
-    save()
-  })
+  document.querySelector('#save').addEventListener('click', save)
 
-  document.querySelector('#deepl-api-url').addEventListener('submit', function(event) {
-    event.preventDefault()
-    save()
-  })
+  document.querySelectorAll('.options').forEach(element => {
+    element.addEventListener('input', () => {
+      document.querySelector('#save').removeAttribute('disabled')
+    })
 
-  document.querySelector('#toggle-subtitles-shortcut').addEventListener('submit', function(event) {
-    event.preventDefault()
-    save()
-  })
-
-  document.querySelector('#toggle-translations-shortcut').addEventListener('submit', function(event) {
-    event.preventDefault()
-    save()
-  })
-
-  document.querySelector('#toggle-pause-shortcut').addEventListener('submit', function(event) {
-    event.preventDefault()
-    save()
-  })
-
-  document.querySelector('#repeat-shortcut').addEventListener('submit', function(event) {
-    event.preventDefault()
-    save()
-  })
-
-  document.querySelector('#toggle-play-and-pause-shortcut').addEventListener('submit', function(event) {
-    event.preventDefault()
-    save()
+    element.addEventListener('submit', save)
   })
 }
 
