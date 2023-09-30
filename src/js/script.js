@@ -37,6 +37,8 @@
   var prepare = {
     key: function () {
       window.addEventListener('keydown', (event) => {
+        if (keyUnavailable(event)) return
+
         switch (event.key) {
           case toggleSubtitlesShortcut:
             event.preventDefault()
@@ -67,6 +69,17 @@
         }
       }, true)
     }
+  }
+
+  function keyUnavailable(event) {
+    // when the active focus element is a textarea
+    if (document.activeElement.nodeName === 'INPUT' && document.activeElement.getAttribute('type') !== 'range') return true
+    if (document.activeElement.nodeName === 'TEXTAREA') return true
+    if (document.activeElement.getAttribute('type') === 'text') return true
+    if (document.activeElement.isContentEditable === true) return true
+
+    // when the key is pressed along with modifier keys
+    if (event.metaKey || event.ctrlKey || event.altKey) return true
   }
 
   function repeat() {
