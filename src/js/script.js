@@ -53,15 +53,19 @@
             }
             break
           case repeatShortcut:
-            document.querySelector('video').currentTime = currentTime
-            if (document.querySelector('video').paused) {
-              document.querySelector('video').play()
-            }
+            repeat()
             break
         }
 
         event.stopPropagation()
       }, true)
+    }
+  }
+
+  function repeat() {
+    document.querySelector('video').currentTime = currentTime
+    if (document.querySelector('video').paused) {
+      document.querySelector('video').play()
     }
   }
 
