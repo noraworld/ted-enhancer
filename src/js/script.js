@@ -12,6 +12,7 @@
   let toggleTranslationsShortcut
   let togglePauseShortcut
   let repeatShortcut
+  let togglePlayAndPauseShortcut
 
   function getOptions() {
     chrome.storage.sync.get({
@@ -19,8 +20,9 @@
       deeplApiUrl: 'https://api-free.deepl.com/v2/translate',
       toggleSubtitlesShortcut: 'c',
       toggleTranslationsShortcut: 't',
-      togglePauseShortcut: 'p',
+      togglePauseShortcut: 'a',
       repeatShortcut: 'r',
+      togglePlayAndPauseShortcut: 'p',
     }, (storage) => {
       deeplApiKey                = storage.deeplApiKey
       deeplApiUrl                = storage.deeplApiUrl
@@ -28,6 +30,7 @@
       toggleTranslationsShortcut = storage.toggleTranslationsShortcut
       togglePauseShortcut        = storage.togglePauseShortcut
       repeatShortcut             = storage.repeatShortcut
+      togglePlayAndPauseShortcut = storage.togglePlayAndPauseShortcut
     })
   }
 
@@ -57,6 +60,10 @@
             event.preventDefault()
             repeat()
             break
+          case togglePlayAndPauseShortcut:
+            event.preventDefault()
+            togglePlayAndPause()
+            break
         }
       }, true)
     }
@@ -67,6 +74,10 @@
     if (document.querySelector('video').paused) {
       document.querySelector('video').play()
     }
+  }
+
+  function togglePlayAndPause() {
+    document.querySelector('video').paused ? document.querySelector('video').play() : document.querySelector('video').pause()
   }
 
   function onplay() {

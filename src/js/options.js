@@ -4,8 +4,9 @@ function restore() {
     deeplApiUrl: 'https://api-free.deepl.com/v2/translate',
     toggleSubtitlesShortcut: 'c',
     toggleTranslationsShortcut: 't',
-    togglePauseShortcut: 'p',
+    togglePauseShortcut: 'a',
     repeatShortcut: 'r',
+    togglePlayAndPauseShortcut: 'a',
   }, (storage) => {
     document.querySelector('#deepl-api-key input').value = storage.deeplApiKey
     document.querySelector('#deepl-api-url input').value = storage.deeplApiUrl
@@ -13,6 +14,7 @@ function restore() {
     document.querySelector('#toggle-translations-shortcut input').value = storage.toggleTranslationsShortcut
     document.querySelector('#toggle-pause-shortcut input').value = storage.togglePauseShortcut
     document.querySelector('#repeat-shortcut input').value = storage.repeatShortcut
+    document.querySelector('#toggle-play-and-pause-shortcut input').value = storage.togglePlayAndPauseShortcut
   })
 }
 
@@ -23,6 +25,7 @@ function save() {
   let toggleTranslationsShortcut = document.querySelector('#toggle-translations-shortcut input').value
   let togglePauseShortcut        = document.querySelector('#toggle-pause-shortcut input').value
   let repeatShortcut             = document.querySelector('#repeat-shortcut input').value
+  let togglePlayAndPauseShortcut = document.querySelector('#toggle-play-and-pause-shortcut input').value
 
   chrome.storage.sync.set({
     deeplApiKey:                deeplApiKey,
@@ -31,6 +34,7 @@ function save() {
     toggleTranslationsShortcut: toggleTranslationsShortcut,
     togglePauseShortcut:        togglePauseShortcut,
     repeatShortcut:             repeatShortcut,
+    togglePlayAndPauseShortcut: togglePlayAndPauseShortcut,
   }, () => {
   })
 }
@@ -62,6 +66,11 @@ function eventListener() {
   })
 
   document.querySelector('#repeat-shortcut').addEventListener('submit', function(event) {
+    event.preventDefault()
+    save()
+  })
+
+  document.querySelector('#toggle-play-and-pause-shortcut').addEventListener('submit', function(event) {
     event.preventDefault()
     save()
   })
