@@ -94,13 +94,13 @@
         console.log(data["translations"][0]["text"])
         document.querySelector('.css-1bg08yq').insertAdjacentHTML(
           'afterend',
-          `<span class="translation-by-ted-enhancer pointer-events-none absolute bottom-12 w-full lg:bottom-18 transition-transform translate-y-12 delay-4000">${data["translations"][0]["text"]}</span>`
+          `<span class="${TRANSLATION_CLASS} pointer-events-none absolute bottom-12 w-full lg:bottom-18 transition-transform translate-y-12 delay-4000">${data["translations"][0]["text"]}</span>`
         )
       }).catch(function(error) {
         console.error(error.message)
         document.querySelector('.css-1bg08yq').insertAdjacentHTML(
           'afterend',
-          `<span class="translation-by-ted-enhancer pointer-events-none absolute bottom-12 w-full lg:bottom-18 transition-transform translate-y-12 delay-4000">${error.message}</span>`
+          `<span class="${TRANSLATION_CLASS} pointer-events-none absolute bottom-12 w-full lg:bottom-18 transition-transform translate-y-12 delay-4000">${error.message}</span>`
         )
       })
   }
@@ -110,7 +110,7 @@
   }
 
   function removeTranslationText() {
-    const obsoleteTranslatedTexts = document.querySelectorAll('.translation-by-ted-enhancer')
+    const obsoleteTranslatedTexts = document.querySelectorAll(`.${TRANSLATION_CLASS}`)
     for (const obsoleteTranslatedText of obsoleteTranslatedTexts) {
       obsoleteTranslatedText.remove();
     }
@@ -172,12 +172,8 @@
   };
 
   var observer2 = new MutationObserver(function() {
-    // if (translate(currentSubtitle()) !== document.querySelector('.translation-by-ted-enhancer').innerHTML) {
-      // console.log(`length = ${document.querySelectorAll('.translation-by-ted-enhancer').length}`)
-      // console.log('observer2');
-      pause()
-      translate(currentSubtitle())
-    // }
+    pause()
+    translate(currentSubtitle())
   });
 
   const config = {

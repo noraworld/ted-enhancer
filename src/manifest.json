@@ -27,6 +27,7 @@
         "https://*.ted.com/*"
       ],
       "js": [
+        "js/constant.js",
         "js/script.js"
       ],
       "all_frames": true
