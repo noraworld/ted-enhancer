@@ -79,17 +79,17 @@ function eventListener() {
 // Localize by replacing __MSG_***__ meta tags
 // https://stackoverflow.com/questions/25467009/internationalization-of-html-pages-for-my-google-chrome-extension#answer-25612056
 function localize() {
-  let objects = document.querySelectorAll('html');
+  let objects = document.querySelectorAll('html')
 
   for (let i = 0; i < objects.length; i++) {
-    let obj = objects[i];
-    let valStrH = obj.innerHTML.toString();
+    let obj = objects[i]
+    let valStrH = obj.innerHTML.toString()
     let valNewH = valStrH.replace(/__MSG_(\w+)__/g, (_match, v1) => {
-      return v1 ? chrome.i18n.getMessage(v1) : '';
-    });
+      return v1 ? chrome.i18n.getMessage(v1) : ''
+    })
 
     if (valNewH != valStrH) {
-      obj.innerHTML = valNewH;
+      obj.innerHTML = valNewH
     }
   }
 }
