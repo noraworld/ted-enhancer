@@ -19,39 +19,79 @@
     "message": "DeepL API Key"
   },
 
+  "deepl_api_key_description": {
+    "message": "This is required to translate the subtitle. You can obtain your key at the DeepL account page."
+  },
+
   "deepl_api_url": {
     "message": "DeepL API URL"
+  },
+
+  "deepl_api_url_description": {
+    "message": "This is required to translate the subtitle."
   },
 
   "toggle_subtitles_shortcut": {
     "message": "Toggle subtitles shortcut key"
   },
 
+  "toggle_subtitles_shortcut_description": {
+    "message": "When you press the key you assigned here when the English subtitle is shown, it will be hidden; otherwise, it will appear."
+  },
+
   "toggle_translations_shortcut": {
     "message": "Toggle translations shortcut key"
+  },
+
+  "toggle_translations_shortcut_description": {
+    "message": "When you press the key you assigned here when the translation text is shown, it will be hidden; otherwise, it will appear."
   },
 
   "toggle_pause_shortcut": {
     "message": "Toggle pause shortcut key"
   },
 
+  "toggle_pause_shortcut_description": {
+    "message": "When you press the key you assigned here when the pause-sentence-by-sentence mode is disabled, it will be enabled; otherwise, it will halt."
+  },
+
   "repeat_shortcut": {
     "message": "Repeat shortcut key"
+  },
+
+  "repeat_shortcut_description": {
+    "message": "When you press the key you assigned here, the video will rewind at the beginning of the sentence you watched and play again."
   },
 
   "toggle_play_and_pause_shortcut": {
     "message": "Toggle play and pause shortcut key"
   },
 
+  "toggle_play_and_pause_shortcut_description": {
+    "message": "When you press the key you assigned here when the video is played, it will pause; otherwise, it will resume."
+  },
+
   "subtitle_disabled": {
     "message": "Mask the English subtitle when accessed or reloaded"
+  },
+
+  "subtitle_disabled_description": {
+    "message": "When checked, the English subtitle will automatically disappear when you access or reload the page. You can turn it on at any time by pressing the shortcut key."
   },
 
   "translation_disabled": {
     "message": "Mask the translation when accessed or reloaded"
   },
 
+  "translation_disabled_description": {
+    "message": "When checked, the translation text will automatically disappear when you access or reload the page. You can turn it on at any time by pressing the shortcut key."
+  },
+
   "pause_sentence_by_sentence_enabled": {
     "message": "Enable pause-sentence-by-sentence when accessed or reloaded"
+  },
+
+  "pause_sentence_by_sentence_enabled_description": {
+    "message": "When checked, the pause-sentence-by-sentence mode will automatically be enabled when you access or reload the page. You can turn it off at any time by pressing the shortcut key."
   }
 }

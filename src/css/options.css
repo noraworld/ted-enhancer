@@ -59,3 +59,52 @@ input.center {
   float: right;
   height: 100%;
 }
+
+.option-name {
+  font-size: 12px;
+}
+
+/* https://zenn.dev/catnose99/articles/26bd8dac9ea5268486c8 */
+.tooltip {
+  position: absolute;
+  cursor: pointer;
+}
+.tooltip::after {
+  content: 'i';
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgb(133, 133, 133);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(133, 133, 133);
+  border-radius: 100%;
+  width: 11px;  /* (option-name font-size) - (border-width) */
+  height: 11px; /* (option-name font-size) - (border-width) */
+  margin: 0 0 0 5px;
+}
+.tooltip-text {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  display: inline-block;
+  padding: 5px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  background: #333;
+  color: #fff;
+  border-radius: 3px;
+  transition: 0.15s ease-in;
+  z-index: 1;
+  white-space: break-spaces;
+  width: 170px;
+}
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
