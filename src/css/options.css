@@ -16,7 +16,7 @@ header {
 }
 
 form {
-  margin: 0 0 15px 0;
+  margin: 0 0 20px 0;
   overflow: hidden;
 }
 
@@ -31,6 +31,10 @@ input {
   color: rgb(233, 233, 233);
   width: 50%;
   float: right;
+  border: 1px solid rgb(133, 133, 133); /* https://csshtml.work/css-border/ */
+  padding: 4px 8px;
+  border-radius: 100px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 input:focus {
@@ -39,6 +43,10 @@ input:focus {
 
 input::placeholder {
   color: rgb(117, 117, 117); /* Chrome placeholder color (chrome://net-internals/#dns) */
+}
+
+input.center {
+  text-align: center;
 }
 
 .title {
