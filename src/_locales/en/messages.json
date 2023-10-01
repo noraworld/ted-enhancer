@@ -49,5 +49,9 @@
 
   "translation_disabled": {
     "message": "Mask the translation when accessed or reloaded"
+  },
+
+  "pause_sentence_by_sentence_enabled": {
+    "message": "Enable pause-sentence-by-sentence when accessed or reloaded"
   }
 }

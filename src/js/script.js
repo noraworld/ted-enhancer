@@ -1,10 +1,10 @@
-(function () {
+(function() {
   'use strict'
 
   var currentTime = 0
   var subtitleBlur = BLUR_DEGREE
   var translationBlur = BLUR_DEGREE
-  var pauseSentenceBySentenceEnabled = 1
+  var pauseSentenceBySentenceEnabled = false
   var latestSubtitle = null
 
   // shortcuts
@@ -29,18 +29,20 @@
       togglePlayAndPauseShortcut: 'p',
       subtitleDisabled: false,
       translationDisabled: false,
+      pauseSentenceBySentenceEnabled: false,
     }, (storage) => {
-      deeplApiKey                = storage.deeplApiKey
-      deeplApiUrl                = storage.deeplApiUrl
-      toggleSubtitlesShortcut    = storage.toggleSubtitlesShortcut
-      toggleTranslationsShortcut = storage.toggleTranslationsShortcut
-      togglePauseShortcut        = storage.togglePauseShortcut
-      repeatShortcut             = storage.repeatShortcut
-      togglePlayAndPauseShortcut = storage.togglePlayAndPauseShortcut
-      subtitleDisabled           = storage.subtitleDisabled
-      subtitleBlur               = subtitleDisabled ? BLUR_DEGREE : 0
-      translationDisabled        = storage.translationDisabled
-      translationBlur            = translationDisabled ? BLUR_DEGREE : 0
+      deeplApiKey                    = storage.deeplApiKey
+      deeplApiUrl                    = storage.deeplApiUrl
+      toggleSubtitlesShortcut        = storage.toggleSubtitlesShortcut
+      toggleTranslationsShortcut     = storage.toggleTranslationsShortcut
+      togglePauseShortcut            = storage.togglePauseShortcut
+      repeatShortcut                 = storage.repeatShortcut
+      togglePlayAndPauseShortcut     = storage.togglePlayAndPauseShortcut
+      subtitleDisabled               = storage.subtitleDisabled
+      subtitleBlur                   = subtitleDisabled ? BLUR_DEGREE : 0
+      translationDisabled            = storage.translationDisabled
+      translationBlur                = translationDisabled ? BLUR_DEGREE : 0
+      pauseSentenceBySentenceEnabled = storage.pauseSentenceBySentenceEnabled
     })
   }
 
@@ -63,7 +65,7 @@
             break
           case togglePauseShortcut:
             event.preventDefault()
-            pauseSentenceBySentenceEnabled = pauseSentenceBySentenceEnabled ? 0 : 1
+            pauseSentenceBySentenceEnabled = pauseSentenceBySentenceEnabled ? false : true
             if (!pauseSentenceBySentenceEnabled && document.querySelector('video').paused) {
               document.querySelector('video').play()
             }
