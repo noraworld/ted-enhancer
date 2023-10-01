@@ -4,6 +4,7 @@
 TED Enhancer lets [TED](https://www.ted.com) transform into the most sophisticated language learning tool. Keen to improve your language skills? Leave it to TED Enhancer. TED Enhancer will definitely be the best buddy for learning a language.
 
 [![feature](/img/feature.png)](https://www.ted.com/talks/mary_norris_the_nit_picking_glory_of_the_new_yorker_s_comma_queen)
+_Referenced from "[The nit-picking glory of The New Yorker's Comma Queen](https://www.ted.com/talks/mary_norris_the_nit_picking_glory_of_the_new_yorker_s_comma_queen)" by TED Talk_
 
 ## Features
 ### Comprehensive translation by DeepL
