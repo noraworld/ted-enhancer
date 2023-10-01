@@ -1,10 +1,11 @@
+/* TED icon color: rgb(191 55 39) */
+
 /* https://qiita.com/tkrkt/items/63fde6f49c9aa33cfdfb */
 body {
   max-width: 800px;
   min-width: 500px;
-  background: rgb(39 43 44);
-  /* TED theme color: rgb(191 55 39) */
-  color: rgb(231 182 177);
+  background: rgb(28, 30, 31); /* TED background color */
+  color: rgb(253, 251, 246);   /* TED text color */
 }
 
 header {
@@ -26,14 +27,18 @@ label {
 }
 
 input {
-  background: rgb(118, 118, 118);
-  color: rgb(233 233 233);
+  background: rgb(59, 59, 59); /* Chrome input background color (chrome://net-internals/#dns) */
+  color: rgb(233, 233, 233);
   width: 50%;
   float: right;
 }
 
 input:focus {
   outline: none;
+}
+
+input::placeholder {
+  color: rgb(117, 117, 117); /* Chrome placeholder color (chrome://net-internals/#dns) */
 }
 
 .title {
