@@ -20,7 +20,7 @@
   },
 
   "deepl_api_key_description": {
-    "message": "This is required to translate the subtitle. You can obtain your key at the DeepL account page."
+    "message": "This is required to translate the subtitle. You can obtain your key at <a href=\"https://www.deepl.com/account\" target=\"_blank\">the DeepL account page</a>."
   },
 
   "deepl_api_url": {
@@ -60,7 +60,7 @@
   },
 
   "repeat_shortcut_description": {
-    "message": "When you press the key you assigned here, the video will rewind at the beginning of the sentence you watched and play again."
+    "message": "When you press the key you assigned here, the video will rewind at the beginning of the sentence you watched and play again from there."
   },
 
   "toggle_play_and_pause_shortcut": {
@@ -68,7 +68,11 @@
   },
 
   "toggle_play_and_pause_shortcut_description": {
-    "message": "When you press the key you assigned here when the video is played, it will pause; otherwise, it will resume."
+    "message": "When you press the key you assigned here when the video is played, it will pause; otherwise, it will resume.<br><br>Want more shortcuts? Try <a href=\"https://github.com/noraworld/videocommander#video-commander\" target=\"_blank\">Video Commander</a>!"
+  },
+
+  "special_keys_description": {
+    "message": "<br><br>If you want to set a special key, like the arrow key, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values\" target=\"_blank\">this document</a> might help."
   },
 
   "subtitle_disabled": {
