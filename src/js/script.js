@@ -6,6 +6,8 @@
   var translationBlur = BLUR_DEGREE
   var pauseSentenceBySentenceEnabled = 1
   var latestSubtitle = null
+
+  // shortcuts
   let deeplApiKey
   let deeplApiUrl
   let toggleSubtitlesShortcut
@@ -13,6 +15,7 @@
   let togglePauseShortcut
   let repeatShortcut
   let togglePlayAndPauseShortcut
+  let subtitleDisabled
 
   function getOptions() {
     chrome.storage.sync.get({
@@ -23,6 +26,7 @@
       togglePauseShortcut: 'a',
       repeatShortcut: 'r',
       togglePlayAndPauseShortcut: 'p',
+      subtitleDisabled: false,
     }, (storage) => {
       deeplApiKey                = storage.deeplApiKey
       deeplApiUrl                = storage.deeplApiUrl
@@ -31,6 +35,8 @@
       togglePauseShortcut        = storage.togglePauseShortcut
       repeatShortcut             = storage.repeatShortcut
       togglePlayAndPauseShortcut = storage.togglePlayAndPauseShortcut
+      subtitleDisabled           = storage.subtitleDisabled
+      subtitleBlur               = subtitleDisabled ? BLUR_DEGREE : 0
     })
   }
 

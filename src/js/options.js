@@ -7,6 +7,7 @@ function restore() {
     togglePauseShortcut: 'a',
     repeatShortcut: 'r',
     togglePlayAndPauseShortcut: 'a',
+    subtitleDisabled: false,
   }, (storage) => {
     document.querySelector('#deepl-api-key input').value = storage.deeplApiKey
     document.querySelector('#deepl-api-url input').value = storage.deeplApiUrl
@@ -15,6 +16,7 @@ function restore() {
     document.querySelector('#toggle-pause-shortcut input').value = storage.togglePauseShortcut
     document.querySelector('#repeat-shortcut input').value = storage.repeatShortcut
     document.querySelector('#toggle-play-and-pause-shortcut input').value = storage.togglePlayAndPauseShortcut
+    document.querySelector('#subtitle-disabled input').checked = storage.subtitleDisabled
   })
 }
 
@@ -26,6 +28,7 @@ function save() {
   let togglePauseShortcut        = document.querySelector('#toggle-pause-shortcut input').value
   let repeatShortcut             = document.querySelector('#repeat-shortcut input').value
   let togglePlayAndPauseShortcut = document.querySelector('#toggle-play-and-pause-shortcut input').value
+  let subtitleDisabled           = document.querySelector('#subtitle-disabled input').checked
 
   chrome.storage.sync.set({
     deeplApiKey:                deeplApiKey,
@@ -35,6 +38,7 @@ function save() {
     togglePauseShortcut:        togglePauseShortcut,
     repeatShortcut:             repeatShortcut,
     togglePlayAndPauseShortcut: togglePlayAndPauseShortcut,
+    subtitleDisabled:           subtitleDisabled,
   }, () => {
     document.querySelector('#save').setAttribute('disabled', '')
   })
@@ -49,6 +53,7 @@ function eventListener() {
     })
 
     element.addEventListener('submit', save)
+    element.addEventListener('change', save)
   })
 }
 

@@ -41,5 +41,9 @@
 
   "toggle_play_and_pause_shortcut": {
     "message": "Toggle play and pause shortcut key"
+  },
+
+  "subtitle_disabled": {
+    "message": "Mask the English subtitle when accessed or reloaded"
   }
 }

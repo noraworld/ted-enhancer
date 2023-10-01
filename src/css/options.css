@@ -16,6 +16,7 @@ header {
 
 form {
   margin: 0 0 15px 0;
+  overflow: hidden;
 }
 
 label {
@@ -28,6 +29,11 @@ input {
   background: rgb(118, 118, 118);
   color: rgb(233 233 233);
   width: 50%;
+  float: right;
+}
+
+input:focus {
+  outline: none;
 }
 
 .title {
