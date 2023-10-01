@@ -3,7 +3,8 @@ body {
   max-width: 800px;
   min-width: 500px;
   background: rgb(39 43 44);
-  color: rgb(233 218 224);
+  /* TED theme color: rgb(191 55 39) */
+  color: rgb(231 182 177);
 }
 
 header {
@@ -13,9 +14,20 @@ header {
   justify-content: center;
 }
 
+form {
+  margin: 0 0 15px 0;
+}
+
+label {
+  display: inline-block;
+  width: 45%;
+  cursor: pointer;
+}
+
 input {
   background: rgb(118, 118, 118);
   color: rgb(233 233 233);
+  width: 50%;
 }
 
 .title {
@@ -27,8 +39,4 @@ input {
   display: flex;
   float: right;
   height: 100%;
-}
-
-.options input {
-  width: 50%;
 }
