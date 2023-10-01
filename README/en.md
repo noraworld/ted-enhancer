@@ -1,25 +1,31 @@
 # TED Enhancer
 ⚠️ **This project is under WIP.**
 
+TED Enhancer lets TED transform into the most sophisticated language learning tool. Keen to improve your language skills? Leave them to TED Enhancer. TED Enhancer will definitely be the best buddy for learning a language.
+
 [![feature](/img/feature.png)](https://www.ted.com/talks/mary_norris_the_nit_picking_glory_of_the_new_yorker_s_comma_queen)
 
 ## Features
-* Comprehensive translation by DeepL
-    * if the video you want to watch offers some subtitles, it can translate it into your preferred language, **even if the video doesn't support the language**
-* Displaying the original subtitle and the translated subtitle simultaneously
-    * translation works **in real-time**
-* Ability to show and hide the subtitles
-    * this is useful when you would like to see if you can understand what the speaker says **without the subtitles**
-* Repetitive playback of the same line
-    * it would help when you try to do **shadowing or overlapping**
-* Keyboard full-support
-    * every function is manipulable as **keyboard shortcuts**
+### Comprehensive translation by DeepL
+If the video you want to watch offers some subtitles, it can translate it into your preferred language, **even if the video doesn't support the language**.
+
+### Displaying the original subtitle and the translated subtitle simultaneously
+Translation works **in real-time**.
+
+### Ability to show and hide the subtitles
+This is useful when you would like to see if you can understand what the speaker says **without the subtitles**.
+
+### Repetitive playback of the same line
+It would help when you try to do **shadowing or overlapping**.
+
+### Keyboard full-support
+Every function is manipulable as **keyboard shortcuts**.
 
 ## Installation
 _Stay tuned!_
 
 ## Keyboard Shortcuts
-Here are the keyboard shortcuts that this extension offers.
+Here are the keyboard shortcuts that this TED Enhancer offers.
 
 | Key | Description                                                      |
 | :-: | ---------------------------------------------------------------- |
