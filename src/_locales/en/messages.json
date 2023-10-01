@@ -45,5 +45,9 @@
 
   "subtitle_disabled": {
     "message": "Mask the English subtitle when accessed or reloaded"
+  },
+
+  "translation_disabled": {
+    "message": "Mask the translation when accessed or reloaded"
   }
 }

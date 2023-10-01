@@ -16,6 +16,7 @@
   let repeatShortcut
   let togglePlayAndPauseShortcut
   let subtitleDisabled
+  let translationDisabled
 
   function getOptions() {
     chrome.storage.sync.get({
@@ -27,6 +28,7 @@
       repeatShortcut: 'r',
       togglePlayAndPauseShortcut: 'p',
       subtitleDisabled: false,
+      translationDisabled: false,
     }, (storage) => {
       deeplApiKey                = storage.deeplApiKey
       deeplApiUrl                = storage.deeplApiUrl
@@ -37,6 +39,8 @@
       togglePlayAndPauseShortcut = storage.togglePlayAndPauseShortcut
       subtitleDisabled           = storage.subtitleDisabled
       subtitleBlur               = subtitleDisabled ? BLUR_DEGREE : 0
+      translationDisabled        = storage.translationDisabled
+      translationBlur            = translationDisabled ? BLUR_DEGREE : 0
     })
   }
 
