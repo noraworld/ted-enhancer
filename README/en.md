@@ -1,6 +1,8 @@
 # TED Enhancer
 ⚠️ **This project is under WIP. Stay tuned!**
 
+![feature](/img/feature.png)
+
 ## Keyboard Shortcuts
 Here are the keyboard shortcuts that this extension offers.
 
