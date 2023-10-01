@@ -1,7 +1,7 @@
 # TED Enhancer
 ⚠️ **This project is under WIP.**
 
-TED Enhancer lets [TED](https://www.ted.com) transform into the most sophisticated language learning tool. Keen to improve your language skills? Leave them to TED Enhancer. TED Enhancer will definitely be the best buddy for learning a language.
+TED Enhancer lets [TED](https://www.ted.com) transform into the most sophisticated language learning tool. Keen to improve your language skills? Leave it to TED Enhancer. TED Enhancer will definitely be the best buddy for learning a language.
 
 [![feature](/img/feature.png)](https://www.ted.com/talks/mary_norris_the_nit_picking_glory_of_the_new_yorker_s_comma_queen)
 
@@ -25,17 +25,17 @@ Every function is manipulable as **keyboard shortcuts**.
 _Stay tuned!_
 
 ## Keyboard Shortcuts
-Here are the keyboard shortcuts that this TED Enhancer offers.
+Here are the keyboard shortcuts that this TED Enhancer provides.
 
 | Key | Description                                                      |
 | :-: | ---------------------------------------------------------------- |
-| `c` | Toggles English subtitles                                        |
+| `c` | Toggles original subtitle                                        |
 | `t` | Toggles translations                                             |
 | `a` | Toggles a feature that automatically pauses sentence by sentence |
 | `r` | Repeats a sentence                                               |
 | `p` | Toggles video play and pause                                     |
 
-You can change the shortcut keys on the option page.
+You can modify the shortcut keys on the option page.
 
 ## License
 All codes in this project are available under the MIT license. See the [LICENSE](/LICENSE) more information.

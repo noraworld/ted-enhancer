@@ -8,7 +8,7 @@
   },
 
   "extension_description": {
-    "message": "Transform TED into the most sophisticated English learning tool"
+    "message": "Transform TED into the most sophisticated language learning tool"
   },
 
   "save_button": {
@@ -36,7 +36,7 @@
   },
 
   "toggle_subtitles_shortcut_description": {
-    "message": "When you press the key you assigned here when the English subtitle is shown, it will be hidden; otherwise, it will appear."
+    "message": "When you press the key you assigned here when the original subtitle is shown, it will be hidden; otherwise, it will appear."
   },
 
   "toggle_translations_shortcut": {
@@ -92,11 +92,11 @@
   },
 
   "subtitle_disabled": {
-    "message": "Mask the English subtitle when accessed or reloaded"
+    "message": "Mask the original subtitle when accessed or reloaded"
   },
 
   "subtitle_disabled_description": {
-    "message": "When checked, the English subtitle will automatically disappear when you access or reload the page. You can turn it on at any time by pressing the shortcut key."
+    "message": "When checked, the original subtitle will automatically disappear when you access or reload the page. You can turn it on at any time by pressing the shortcut key."
   },
 
   "translation_disabled": {
