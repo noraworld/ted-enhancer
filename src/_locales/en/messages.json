@@ -16,7 +16,7 @@
   },
 
   "deepl_api_key": {
-    "message": "DeepL API Key"
+    "message": "DeepL API key"
   },
 
   "deepl_api_key_description": {
@@ -73,6 +73,22 @@
 
   "special_keys_description": {
     "message": "<br><br>If you want to set a special key, like the arrow key, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values\" target=\"_blank\">this document</a> might help."
+  },
+
+  "subtitle_language": {
+    "message": "Subtitle language"
+  },
+
+  "subtitle_language_description": {
+    "message": "This is the language you select on the site. If this is omitted, it will attempt to detect the language of the subtitle you set and translate it."
+  },
+
+  "translation_language": {
+    "message": "Translation language"
+  },
+
+  "translation_language_description": {
+    "message": "This is the language you prefer to translate into."
   },
 
   "subtitle_disabled": {

@@ -63,6 +63,10 @@ a:active {
   color: dodgerblue;
 }
 
+select {
+  outline: none;
+}
+
 .title {
   display: inline-block;
   width: 100%;

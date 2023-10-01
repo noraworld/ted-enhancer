@@ -14,6 +14,8 @@
   let toggleTranslationsShortcut
   let togglePauseShortcut
   let repeatShortcut
+  let subtitleLanguage
+  let translationLanguage
   let togglePlayAndPauseShortcut
   let subtitleDisabled
   let translationDisabled
@@ -27,6 +29,8 @@
       togglePauseShortcut: 'a',
       repeatShortcut: 'r',
       togglePlayAndPauseShortcut: 'p',
+      subtitleLanguage: '',
+      translationLanguage: 'JA',
       subtitleDisabled: false,
       translationDisabled: false,
       pauseSentenceBySentenceEnabled: false,
@@ -38,6 +42,8 @@
       togglePauseShortcut            = storage.togglePauseShortcut
       repeatShortcut                 = storage.repeatShortcut
       togglePlayAndPauseShortcut     = storage.togglePlayAndPauseShortcut
+      subtitleLanguage               = storage.subtitleLanguage
+      translationLanguage            = storage.translationLanguage
       subtitleDisabled               = storage.subtitleDisabled
       subtitleBlur                   = subtitleDisabled ? BLUR_DEGREE : 0
       translationDisabled            = storage.translationDisabled
@@ -131,7 +137,7 @@
       return
     }
 
-    var content = 'auth_key=' + deeplApiKey + '&text=' + text + '&source_lang=EN&target_lang=JA'
+    var content = `auth_key=${deeplApiKey}&text=${text}&source_lang=${subtitleLanguage}&target_lang=${translationLanguage}`
 
     let url = `${deeplApiUrl}?${content}`
 

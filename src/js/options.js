@@ -7,6 +7,8 @@ function restore() {
     togglePauseShortcut: 'a',
     repeatShortcut: 'r',
     togglePlayAndPauseShortcut: 'a',
+    subtitleLanguage: '',
+    translationLanguage: 'JA',
     subtitleDisabled: false,
     translationDisabled: false,
     pauseSentenceBySentenceEnabled: false,
@@ -18,6 +20,8 @@ function restore() {
     document.querySelector('#toggle-pause-shortcut input').value = storage.togglePauseShortcut
     document.querySelector('#repeat-shortcut input').value = storage.repeatShortcut
     document.querySelector('#toggle-play-and-pause-shortcut input').value = storage.togglePlayAndPauseShortcut
+    document.querySelector('#subtitle-language-input').value = storage.subtitleLanguage
+    document.querySelector('#translation-language-input').value = storage.translationLanguage
     document.querySelector('#subtitle-disabled input').checked = storage.subtitleDisabled
     document.querySelector('#translation-disabled input').checked = storage.translationDisabled
     document.querySelector('#pause-sentence-by-sentence-enabled input').checked = storage.pauseSentenceBySentenceEnabled
@@ -32,6 +36,8 @@ function save() {
   let togglePauseShortcut            = document.querySelector('#toggle-pause-shortcut input').value
   let repeatShortcut                 = document.querySelector('#repeat-shortcut input').value
   let togglePlayAndPauseShortcut     = document.querySelector('#toggle-play-and-pause-shortcut input').value
+  let subtitleLanguage               = document.querySelector('#subtitle-language-input').value
+  let translationLanguage            = document.querySelector('#translation-language-input').value
   let subtitleDisabled               = document.querySelector('#subtitle-disabled input').checked
   let translationDisabled            = document.querySelector('#translation-disabled input').checked
   let pauseSentenceBySentenceEnabled = document.querySelector('#pause-sentence-by-sentence-enabled input').checked
@@ -44,6 +50,8 @@ function save() {
     togglePauseShortcut:            togglePauseShortcut,
     repeatShortcut:                 repeatShortcut,
     togglePlayAndPauseShortcut:     togglePlayAndPauseShortcut,
+    subtitleLanguage:               subtitleLanguage,
+    translationLanguage:            translationLanguage,
     subtitleDisabled:               subtitleDisabled,
     translationDisabled:            translationDisabled,
     pauseSentenceBySentenceEnabled: pauseSentenceBySentenceEnabled,
