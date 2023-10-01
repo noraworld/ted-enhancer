@@ -120,6 +120,7 @@ select {
   transition: 0.15s ease-in;
   z-index: 1;
   white-space: break-spaces;
+  text-align: center;
   width: 170px;
   border: 1px solid #797979;
 }
