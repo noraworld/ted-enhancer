@@ -124,6 +124,10 @@ select {
   width: 170px;
   border: 1px solid #797979;
 }
+.tooltip-text.bottom {
+  top: 20px;
+  bottom: unset;
+}
 .tooltip:hover .tooltip-text {
   opacity: 1;
   visibility: visible;
