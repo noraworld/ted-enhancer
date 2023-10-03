@@ -38,5 +38,11 @@ Here are the keyboard shortcuts that this TED Enhancer provides.
 
 You can modify the shortcut keys on the option page.
 
+## Troubleshooting
+### The original and translated subtitles are unavailable.
+Make sure that the original subtitle on the site is turned on.
+
+![subtitle on](/img/subtitle_on.png)
+
 ## License
 All codes in this project are available under the MIT license. See the [LICENSE](/LICENSE) more information.
