@@ -7,6 +7,7 @@ body {
   background: rgb(28, 30, 31); /* TED background color */
   color: rgb(253, 251, 246);   /* TED text color */
   margin: 8px 60px;
+  overscroll-behavior: none; /* disable bounce scroll https://b.0218.jp/20180823124640.html */
 }
 
 header {
