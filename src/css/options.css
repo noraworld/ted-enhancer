@@ -28,15 +28,18 @@ label {
   cursor: pointer;
 }
 
-input {
+input, select {
+  width: 50%;
   background: rgb(59, 59, 59); /* Chrome input background color (chrome://net-internals/#dns) */
   color: rgb(233, 233, 233);
-  width: 50%;
-  float: right;
-  border: 1px solid rgb(133, 133, 133); /* https://csshtml.work/css-border/ */
-  padding: 4px 8px;
-  border-radius: 100px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 4px 8px;
+  border: 1px solid rgb(133, 133, 133); /* https://csshtml.work/css-border/ */
+  float: right;
+}
+
+input {
+  border-radius: 100px;
 }
 
 input:focus {
@@ -51,6 +54,13 @@ input.center {
   text-align: center;
 }
 
+select {
+  outline: none;
+  margin: 4px 10px; /* width should be (input padding) + (input border-width) */
+  text-align: center;
+  border-radius: 6px;
+}
+
 a {
   color: skyblue;
 }
@@ -61,10 +71,6 @@ a:hover {
 
 a:active {
   color: dodgerblue;
-}
-
-select {
-  outline: none;
 }
 
 .title {
